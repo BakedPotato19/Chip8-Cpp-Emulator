@@ -1,3 +1,3 @@
-#CHIP-8 Emulator written in C++
+# CHIP-8 Emulator written in C++
 
 
