@@ -37,11 +37,8 @@ void CHIP8::initialize()
 	this->cpu->setKeys(this->keys);
 
 	this->loadFontsetToMemory();
-	this->loadRomToMemory("/home/oliverbak/Downloads/Tetris [Fran Dachille, 1991].ch8");
-
 
 	this->setupGraphics();
-	this->loop();
 	
 }
 
@@ -66,13 +63,13 @@ void CHIP8::loadFontsetToMemory()
 	}
 }
 
-void CHIP8::loadRomToMemory(std::string path)
+bool CHIP8::loadRomToMemory(std::string path)
 {
+	std::cout << path << "\n";
 	std::ifstream rom;
     rom.open(path, std::ifstream::binary);
-    
+
     if (rom) {
-		std::cout << "rom exists" << std::endl;
         rom.seekg(0, rom.end);
         int buffer_size = rom.tellg();
         rom.seekg(0, rom.beg);
@@ -87,8 +84,10 @@ void CHIP8::loadRomToMemory(std::string path)
         }
 
         delete[] buffer;
-    }
-
+		return true;
+	}else{
+		return false;
+	}
 
 }
 

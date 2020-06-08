@@ -19,10 +19,6 @@ class CHIP8
 		void setupGraphics();
 		void setupInput();
 		void loadFontsetToMemory();
-		void loadRomToMemory(std::string path);
-		void loop();
-
-
 
 		sf::Event event;
 		sf::RenderWindow* window;
@@ -35,8 +31,10 @@ class CHIP8
 		void initialize();	
 		void render();
 		void update();
+		void loop();
 		void updateSFMLEvents();
 		unsigned char processKeyEvent();
+		bool loadRomToMemory(std::string path);
 
 
 };
