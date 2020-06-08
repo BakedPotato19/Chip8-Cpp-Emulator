@@ -1,5 +1,6 @@
 # CHIP-8 Emulator written in C++
 Tetris using the CHIP-8 emulator
+
 ![screenshot](tetris.png)
 
 ## Dependencies
